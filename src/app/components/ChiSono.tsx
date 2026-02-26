@@ -239,7 +239,7 @@ export function ChiSono() {
                 </span>
               </div>
               <p className="text-gray-800 mb-1" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
-                Campagna per promuovere i diritti degli studenti e una scuola inclusiva e sicura.
+                Gestione della comunicazione ed Infografica dei progetti: "Connessioni Comuni" e "Centro per le famiglie Apertamente"
               </p>
               <p className="text-xs text-gray-600" style={{ fontFamily: 'DM Sans, sans-serif' }}>
                 Cooperativa Il Simbolo
