@@ -3,7 +3,7 @@ import { MapPin, Mail, Phone, Heart } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 export function ChiSono() {
-  const [ref, isInView] = useInView({ threshold: 0.2 });
+  const [ref, isInView] = useInView({ threshold: 0.05 });
 
   return (
     <section id="chi-sono" ref={ref} className="py-24 px-6 bg-white relative overflow-hidden">

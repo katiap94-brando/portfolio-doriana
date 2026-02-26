@@ -231,7 +231,7 @@ function CategorySection({ category, projects, isOpen, onToggle, isInView }: Cat
 }
 
 export function Projects() {
-  const [ref, isInView] = useInView({ threshold: 0.1 });
+  const [ref, isInView] = useInView({ threshold: 0.05 });
   const [openCategories, setOpenCategories] = useState<string[]>([]);
 
   const toggleCategory = (categoryName: string) => {

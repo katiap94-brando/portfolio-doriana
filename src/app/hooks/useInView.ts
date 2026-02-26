@@ -17,8 +17,8 @@ export function useInView(options: UseInViewOptions = {}) {
         }
       },
       {
-        threshold: options.threshold || 0.1,
-        rootMargin: options.rootMargin || '0px',
+        threshold: 0,
+        rootMargin: '0px 0px -50px 0px',
       }
     );
 
@@ -32,7 +32,7 @@ export function useInView(options: UseInViewOptions = {}) {
         observer.unobserve(currentRef);
       }
     };
-  }, [options.threshold, options.rootMargin]);
+  }, []);
 
   return [ref, isInView] as const;
 }
