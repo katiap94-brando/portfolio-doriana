@@ -438,7 +438,7 @@ export function Projects() {
         },
         {
           client: 'Progetto Personale',
-          title: '1 Grazie & 1/2 - Dori&Ka',
+          title: '1 Grafica & 1/2 - Dori&Ka',
           image: logo9,
           stats: {},
           hideDescription: true,

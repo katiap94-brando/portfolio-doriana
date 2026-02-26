@@ -4,7 +4,7 @@ const profileImage = '/doriana-profilo.jpeg';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1877F2] via-purple-500 to-coral-400">
+    <section className="relative min-h-screen md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1877F2] via-purple-500 to-coral-400 pb-16">
       {/* Animated floating shapes */}
       <motion.div
         className="absolute top-20 left-10 w-32 h-32 bg-yellow-300 rounded-full opacity-20 blur-2xl"
@@ -27,7 +27,7 @@ export function Hero() {
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-10 md:py-20">
         {/* Mobile: testo sopra, foto sotto. Desktop: foto sinistra, testo destra */}
         <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
