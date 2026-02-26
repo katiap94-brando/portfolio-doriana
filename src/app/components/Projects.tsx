@@ -12,7 +12,7 @@ const img5 = '/lotto-marzo.jpeg';
 const img6 = '/17novembre.jpeg';
 const img7 = '/era-una-mattina-19-marzo.jpeg';
 const img8 = '/10dicembre.jpeg';
-const imgPapa = '/papa-francesco.jpg';
+const imgPapa = '/papa-francesco.jpeg';
 
 // Dono Sospeso
 const donoGiocattolo = '/giocattolo-sospeso-logo.png';
@@ -33,18 +33,18 @@ const logo9 = '/una-grafica-e-mezza-logo.png';
 const logo10 = '/Caro-amico-ti-dono.png';
 
 // Video & Reels
-const reelIstituzionali = '/reel-istituzionali.jpg';
-const reelYoung = '/reel-young-caritas.jpg';
+const reelIstituzionali = '/reel-istituzionali.jpeg';
+const reelYoung = '/reel-young-caritas.jpeg';
 
 // FantaSanremo
 const sanremo1 = '/Dargen.png';
 const sanremo2 = '/Levante.png';
 const sanremo3 = '/Malika.png';
-const sanremoCanzonette = '/dargen-canzonette.jpg';
-const giochi1 = '/giochi-di-intrattenimento-1.jpg';
-const giochi2 = '/giochi-di-intrattenimento-2.jpg';
-const giochi3 = '/giochi-di-intrattenimento-3.jpg';
-const giochi4 = '/giochi-di-intrattenimento-4.jpg';
+const sanremoCanzonette = '/dargen-canzonette.jpeg';
+const giochi1 = '/giochi-di-intrattenimento-1.jpeg';
+const giochi2 = '/giochi-di-intrattenimento-2.jpeg';
+const giochi3 = '/giochi-di-intrattenimento-3.jpeg';
+const giochi4 = '/giochi-di-intrattenimento-4.jpeg';
 
 interface ProjectCardProps {
   title: string;
