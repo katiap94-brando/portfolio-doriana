@@ -3,37 +3,38 @@ import { Eye, Heart, Users, Calendar, Video, Megaphone, BookOpen, ChevronDown, P
 import { useState } from 'react';
 import { useInView } from '../hooks/useInView';
 
-import img1 from 'figma:asset/9e5257420224d681d98ff345ab41e7ac52615d6a.png';
-import img2 from 'figma:asset/dfc2858aa5d896d586d1886c64f3c97833bcf941.png';
-import img3 from 'figma:asset/a05268e3582ac962072c091acc47673b65fd221a.png';
-import img4 from 'figma:asset/eedc18de54d963fb23f76681a9fe6f31cc2e57be.png';
-import img5 from 'figma:asset/6ca2edc43df0fa54074336e23b1525c7839714b6.png';
-import img6 from 'figma:asset/78c5eeccb933820e23f2a883859ae50a3068afbc.png';
-import img7 from 'figma:asset/d33c7bd9047ea3003024c1d98496011165b0f138.png';
-import img8 from 'figma:asset/d1fe1e5e169a5fc98d7ce5a02bd3d89b05194e34.png';
+// Giornate mondiali
+const img1 = '/festa-dei-lavoratori.jpeg';
+const img2 = '/don-pino-puglisi.jpeg';
+const img3 = '/ascolto.jpeg';
+const img4 = '/la-scuola-che-vorrei.jpeg';
+const img5 = '/lotto-marzo.jpeg';
+const img6 = '/17novembre.jpeg';
+const img7 = '/era-una-mattina-19-marzo.jpeg';
+const img8 = '/10dicembre.jpeg';
 
 // Dono Sospeso
-import donoLibro from 'figma:asset/722dc78efb2a28cf684ec369e4638fe4879a6744.png';
-import donoGiocattolo from 'figma:asset/d238894d5645f88243f78e1404e315d43da1be70.png';
-import donoSanta from 'figma:asset/354108f93fc898a48da575fccb55c6f9b12a0976.png';
-import donoAnatale from 'figma:asset/242587be55b57870f057914fe043fde79c6e22ce.png';
+const donoGiocattolo = '/giocattolo-sospeso-logo.png';
+const donoLibro = '/libro-sospeso-logo.png';
+const donoSanta = '/cosa-aspetti.jpeg';
+const donoAnatale = '/a-natale.jpeg';
 
 // Loghi
-import logo1 from 'figma:asset/cb5478b80c0c60b1aa269f1b5f4187bbc44635a0.png';
-import logo2 from 'figma:asset/8147c53868ef66f8345279579bb2e0e7adb0c11b.png';
-import logo3 from 'figma:asset/f7ee72dd97657c274bb9b82fb090e7f7488baded.png';
-import logo4 from 'figma:asset/7b5e737b8aee07cb531565f510a51d5309c5e60c.png';
-import logo5 from 'figma:asset/f64745a4f99379b5415c8b06da1a3305bf63399f.png';
-import logo6 from 'figma:asset/326ac95f8ad81b099682d73f6863f7eba519dbaa.png';
-import logo7 from 'figma:asset/53b26f220358c08f99ebbba0467274cfbf8a01ba.png';
-import logo8 from 'figma:asset/0c22e943c5b187b79ba3bb126c783d2946f6ae8c.png';
-import logo9 from 'figma:asset/8dfbcb86db281adba8027522bf2410a252a6aed0.png';
-import logo10 from 'figma:asset/23a1a7c99ceab037f197f5b11ce2ba06d429811b.png';
+const logo1 = '/up-logo.png';
+const logo2 = '/estate-in-servizio-logo.png';
+const logo3 = '/caritas-whatsapp-logo.png';
+const logo4 = '/libro-sospeso-logo.png';
+const logo5 = '/giocattolo-sospeso-logo.png';
+const logo6 = '/strappare-oltre-i-bordi.png';
+const logo7 = '/il-coraggio-di-vivere-logo.png';
+const logo8 = '/compagni-di-viaggio-logo.png';
+const logo9 = '/una-grafica-e-mezza-logo.png';
+const logo10 = '/Caro-amico-ti-dono.png';
 
-// Campagna FantaSanremo 2026
-import sanremo1 from 'figma:asset/2372c8ad7957dda89858c9f67d2b16a530527950.png';
-import sanremo2 from 'figma:asset/105092877d4a4811d8aa092ba343fdab047640ac.png';
-import sanremo3 from 'figma:asset/46b3fc226e1e3cc437d5a36732ef1ba270982b2c.png';
+// FantaSanremo
+const sanremo1 = '/Dargen.png';
+const sanremo2 = '/Levante.png';
+const sanremo3 = '/Malika.png';
 
 interface ProjectCardProps {
   title: string;

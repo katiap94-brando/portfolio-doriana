@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
-import profileImage from 'figma:asset/d23134c51f976f40ed3842841b25cb49ae679691.png';
+const profileImage = '/doriana-profilo.jpeg';
 
 export function Hero() {
   return (
