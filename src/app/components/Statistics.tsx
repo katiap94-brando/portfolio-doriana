@@ -67,7 +67,7 @@ function StatItem({ number, label, delay, isInView }: StatItemProps) {
 }
 
 export function Statistics() {
-  const [ref, isInView] = useInView({ threshold: 0.3 });
+  const [ref, isInView] = useInView({ threshold: 0.1 });
 
   const stats = [
     { number: '7', label: 'Profili social gestiti' },
