@@ -26,17 +26,11 @@ export function Contact() {
           transition={{ duration: 0.8 }}
         >
           <h2
-            className="text-5xl md:text-6xl text-white mb-4"
+            className="text-5xl md:text-6xl text-white mb-8"
             style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800 }}
           >
             Parliamoci! ☕
           </h2>
-          <p
-            className="text-2xl text-white/90 mb-8"
-            style={{ fontFamily: 'DM Sans, sans-serif' }}
-          >
-            Sono sempre aperta a nuove collaborazioni e opportunità.
-          </p>
         </motion.div>
 
         {/* Contact details */}
@@ -82,7 +76,7 @@ export function Contact() {
           className="mt-8 text-white/70"
           style={{ fontFamily: 'DM Sans, sans-serif' }}
         >
-          © 2026 Doriana Rizzo - Social Media Manager & Content Creator
+          © 2026 Doriana Rizzo - Social Media Manager & Comunicazione
         </motion.p>
       </div>
 

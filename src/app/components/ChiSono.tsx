@@ -30,7 +30,7 @@ export function ChiSono() {
           >
             Sono <span className="text-[#1877F2]" style={{ fontWeight: 700 }}>Doriana Rizzo</span>, 
             Social Media Manager & Communication Specialist. Mi occupo di strategie digitali, 
-            gestione canali social e creazione di contenuti che raccontano storie autentiche e costruiscono community.
+            gestione canali social e creazione di contenuti prevalentemente per il settore sociale.
           </p>
         </motion.div>
 
@@ -170,7 +170,7 @@ export function ChiSono() {
                 </span>
               </div>
               <p className="text-gray-800" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
-                Bandi Servizio Civile (dal 2023 ad oggi)
+                Cura della comunicazione e promozione dei Bandi Servizio Civile (dal 2023 ad oggi)
               </p>
             </div>
 
@@ -185,7 +185,10 @@ export function ChiSono() {
                 </span>
               </div>
               <p className="text-gray-800" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
-                Campagne "Dono Sospeso a Natale"
+                Progettazione infografiche e strategia comunicativa Progetto Dono Sospeso a Natale
+              </p>
+              <p className="text-xs text-gray-600 mt-1" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                Caritas Diocesana di Pisa
               </p>
             </div>
 
@@ -200,7 +203,7 @@ export function ChiSono() {
                 </span>
               </div>
               <p className="text-gray-800 mb-1" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
-                Festival Di Storie in Movimento
+                Gestione della comunicazione del Festival Di Storie in Movimento
               </p>
               <p className="text-xs text-gray-600" style={{ fontFamily: 'DM Sans, sans-serif' }}>
                 in collaborazione con cooperativa Il simbolo, AIPD Pisa e Impresa sociale Con I Bambini
@@ -236,10 +239,10 @@ export function ChiSono() {
                 </span>
               </div>
               <p className="text-gray-800 mb-1" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
-                Infografica Natale Sospeso
+                Campagna per promuovere i diritti degli studenti e una scuola inclusiva e sicura.
               </p>
               <p className="text-xs text-gray-600" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                Sistema infografico completo
+                Cooperativa Il Simbolo
               </p>
             </div>
 
@@ -257,7 +260,7 @@ export function ChiSono() {
                 Collaborazioni Editoriali
               </p>
               <p className="text-xs text-gray-600" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                Toscana Oggi, Vita Nova
+                Toscana Oggi, Vita Nova, La Nazione
               </p>
             </div>
 

@@ -12,6 +12,7 @@ const img5 = '/lotto-marzo.jpeg';
 const img6 = '/17novembre.jpeg';
 const img7 = '/era-una-mattina-19-marzo.jpeg';
 const img8 = '/10dicembre.jpeg';
+const imgPapa = '/papa-francesco.jpg';
 
 // Dono Sospeso
 const donoGiocattolo = '/giocattolo-sospeso-logo.png';
@@ -31,15 +32,24 @@ const logo8 = '/compagni-di-viaggio-logo.png';
 const logo9 = '/una-grafica-e-mezza-logo.png';
 const logo10 = '/Caro-amico-ti-dono.png';
 
+// Video & Reels
+const reelIstituzionali = '/reel-istituzionali.jpg';
+const reelYoung = '/reel-young-caritas.jpg';
+
 // FantaSanremo
 const sanremo1 = '/Dargen.png';
 const sanremo2 = '/Levante.png';
 const sanremo3 = '/Malika.png';
+const sanremoCanzonette = '/dargen-canzonette.jpg';
+const giochi1 = '/giochi-di-intrattenimento-1.jpg';
+const giochi2 = '/giochi-di-intrattenimento-2.jpg';
+const giochi3 = '/giochi-di-intrattenimento-3.jpg';
+const giochi4 = '/giochi-di-intrattenimento-4.jpg';
 
 interface ProjectCardProps {
   title: string;
   client: string;
-  description: string;
+  description?: string;
   image?: string;
   stats: {
     followers?: string;
@@ -47,9 +57,12 @@ interface ProjectCardProps {
     engagement?: string;
   };
   delay: number;
+  hideDescription?: boolean;
+  logoOnly?: boolean;
+  objectPosition?: string;
 }
 
-function ProjectCard({ title, client, description, image, stats, delay }: ProjectCardProps) {
+function ProjectCard({ title, client, description, image, stats, delay, hideDescription, logoOnly, objectPosition }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ scale: 0.8, opacity: 0 }}
@@ -62,7 +75,12 @@ function ProjectCard({ title, client, description, image, stats, delay }: Projec
       {/* Image */}
       <div className="h-64 relative overflow-hidden bg-gray-100">
         {image ? (
-          <img src={image} alt={title} className="w-full h-full object-cover" />
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: objectPosition || 'center' }}
+          />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-purple-200 via-coral-200 to-yellow-200 flex items-center justify-center">
             <svg className="w-24 h-24 text-white/50" fill="currentColor" viewBox="0 0 24 24">
@@ -86,40 +104,44 @@ function ProjectCard({ title, client, description, image, stats, delay }: Projec
         >
           {client}
         </p>
-        <p
-          className="text-sm text-gray-600 mb-4 leading-relaxed"
-          style={{ fontFamily: 'DM Sans, sans-serif' }}
-        >
-          {description}
-        </p>
+        {!hideDescription && description && (
+          <p
+            className="text-sm text-gray-600 mb-4 leading-relaxed"
+            style={{ fontFamily: 'DM Sans, sans-serif' }}
+          >
+            {description}
+          </p>
+        )}
 
         {/* Stats */}
-        <div className="flex flex-wrap gap-3 pt-3 border-t border-gray-100">
-          {stats.followers && (
-            <div className="flex items-center gap-1.5">
-              <Users className="w-4 h-4 text-[#1877F2]" />
-              <span className="text-sm text-gray-700" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
-                {stats.followers}
-              </span>
-            </div>
-          )}
-          {stats.views && (
-            <div className="flex items-center gap-1.5">
-              <Eye className="w-4 h-4 text-coral-500" />
-              <span className="text-sm text-gray-700" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
-                {stats.views}
-              </span>
-            </div>
-          )}
-          {stats.engagement && (
-            <div className="flex items-center gap-1.5">
-              <Heart className="w-4 h-4 text-pink-500" />
-              <span className="text-sm text-gray-700" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
-                {stats.engagement}
-              </span>
-            </div>
-          )}
-        </div>
+        {!hideDescription && (
+          <div className="flex flex-wrap gap-3 pt-3 border-t border-gray-100">
+            {stats.followers && (
+              <div className="flex items-center gap-1.5">
+                <Users className="w-4 h-4 text-[#1877F2]" />
+                <span className="text-sm text-gray-700" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
+                  {stats.followers}
+                </span>
+              </div>
+            )}
+            {stats.views && (
+              <div className="flex items-center gap-1.5">
+                <Eye className="w-4 h-4 text-coral-500" />
+                <span className="text-sm text-gray-700" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
+                  {stats.views}
+                </span>
+              </div>
+            )}
+            {stats.engagement && (
+              <div className="flex items-center gap-1.5">
+                <Heart className="w-4 h-4 text-pink-500" />
+                <span className="text-sm text-gray-700" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
+                  {stats.engagement}
+                </span>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </motion.div>
   );
@@ -244,21 +266,21 @@ export function Projects() {
         {
           title: 'Giornata dell\'Ascolto',
           client: 'Caritas Diocesana di Pisa',
-          description: 'Contenuto per sensibilizzare sull\'importanza dell\'ascolto come atto di amore e trasformazione.',
+          description: 'Contenuto per sensibilizzare l\'importanza dell\'ascolto, cuore del servizio in Caritas.',
           image: img3,
           stats: {},
         },
         {
           title: 'La Scuola che Vorrei',
           client: 'Young Caritas Pisa',
-          description: 'Campagna per promuovere i diritti degli studenti e una scuola inclusiva e sicura.',
+          description: 'Post per il contrasto alla Povertà Educativa',
           image: img4,
           stats: {},
         },
         {
           title: 'Giornata Mondiale dei Poveri',
           client: 'Caritas Diocesana di Pisa',
-          description: 'Post emozionale per sensibilizzare sulla povertà con citazione biblica e imagery potente.',
+          description: 'Post per la sensibilizzazione della giornata mondiale dei poveri.',
           image: img5,
           stats: {},
         },
@@ -283,39 +305,46 @@ export function Projects() {
           image: img8,
           stats: {},
         },
+        {
+          title: 'Pillole di Papa Leone',
+          client: 'Caritas Diocesana di Pisa',
+          description: 'Rubrica per la divulgazione di messaggi di Papa Leone.',
+          image: imgPapa,
+          stats: {},
+        },
       ],
     },
     {
       name: 'Dono Sospeso',
       icon: Megaphone,
       color: 'from-coral-400 to-yellow-400',
-      description: 'Campagne natalizie di solidarietà e raccolta fondi',
+      description: 'Progetto Natalizio di solidarietà Caritas Pisa',
       projects: [
         {
           title: 'Giocattolo Sospeso',
           client: 'Caritas Diocesana di Pisa',
-          description: 'Campagna virale per il Giocattolo Sospeso con bambino supereroe, coinvolgendo la community con un tone divertente e ironico.',
+          description: 'Progettazione locandina Giocattolo sospeso a Natale',
           image: donoGiocattolo,
           stats: {},
         },
         {
           title: 'Libro Sospeso',
           client: 'Caritas Diocesana di Pisa',
-          description: 'Campagna per il Libro Sospeso con bambina che legge, promuovendo la cultura e la solidarietà.',
+          description: 'Progettazione locandina Libro Sospeso a Natale',
           image: donoLibro,
           stats: {},
         },
         {
           title: 'Cosa Aspetti?',
           client: 'Caritas Diocesana di Pisa',
-          description: 'Post virale con Babbo Natale ironico per stimolare la partecipazione alla campagna #LibroSospeso e #GiocattoloSospeso.',
+          description: 'Post con Babbo Natale ironico per stimolare la partecipazione alla campagna #LibroSospeso e #GiocattoloSospeso.',
           image: donoSanta,
           stats: {},
         },
         {
           title: 'Sei un Negoziante?',
           client: 'Caritas Diocesana di Pisa',
-          description: 'Campagna dedicata ai negozianti per aderire all\'iniziativa Dono Sospeso Anatale con librerie e giocattolerie.',
+          description: 'Campagna dedicata ai negozianti per aderire all\'iniziativa Dono Sospeso A Natale con librerie e giocattolerie.',
           image: donoAnatale,
           stats: {},
         },
@@ -331,12 +360,16 @@ export function Projects() {
           client: 'Caritas Diocesana di Pisa',
           title: 'Reels Istituzionali',
           description: 'Creazione di reels per raccontare le attività quotidiane della Caritas e sensibilizzare il pubblico.',
+          image: reelIstituzionali,
+          objectPosition: 'top',
           stats: {},
         },
         {
           client: 'Young Caritas Pisa',
-          title: 'Video Eventi',
+          title: 'Reels Progetti',
           description: 'Documentazione video di eventi, percorsi nelle scuole e attività di volontariato giovanile.',
+          image: reelYoung,
+          objectPosition: 'top',
           stats: {},
         },
       ],
@@ -350,72 +383,72 @@ export function Projects() {
         {
           client: 'Young Caritas Pisa',
           title: 'UP! To the Next Level',
-          description: 'Logo colorato e dinamico per progetto giovanile "Coloriamo il mondo" con palette vibrante.',
           image: logo1,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Young Caritas Pisa',
           title: 'E-STATE al Servizio 2025',
-          description: 'Logo estivo per campo di volontariato giovanile con elementi playful e accoglienti.',
           image: logo2,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Caritas Diocesana di Pisa',
           title: 'Canale WhatsApp',
-          description: 'Logo per il lancio del canale WhatsApp istituzionale, unendo l\'identità Caritas con lo strumento digital.',
           image: logo3,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Caritas Diocesana di Pisa',
           title: 'Libro Sospeso 2025',
-          description: 'Logo natalizio per la campagna solidale "Libro Sospeso" con decorazioni festive.',
           image: logo4,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Caritas Diocesana di Pisa',
           title: 'Giocattolo Sospeso 2025',
-          description: 'Logo coordinato per la campagna "Giocattolo Sospeso" con palette calda e tema natalizio.',
           image: logo5,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Young Caritas Pisa',
-          title: 'Strappare Lungo i Bordi OLTRE',
-          description: 'Logo bold e ironico per progetto sociale ispirato alla serie cult, con stile street e autentico.',
+          title: 'Strappare oltre i bordi',
           image: logo6,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Caritas Diocesana di Pisa',
           title: 'Il Coraggio di Vivere',
-          description: 'Logo per Convegno Diocesano Caritas con tipografia elegante e palette istituzionale.',
           image: logo7,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Caritas Diocesana di Pisa',
           title: 'Compagni di Viaggio',
-          description: 'Logo per convegno del 30 novembre 2024 con simbolismo del cammino condiviso.',
           image: logo8,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Progetto Personale',
           title: '1 Grazie & 1/2 - Dori&Ka',
-          description: 'Logo personale colorato e giocoso per brand "1 Grazie & 1/2" con palette multicolor.',
           image: logo9,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Caritas Diocesana di Pisa',
           title: 'Caro Amico Ti Dono',
-          description: 'Logo per campagna solidale dedicata ai bambini, con illustrazioni colorate e messaggio inclusivo.',
           image: logo10,
           stats: {},
+          hideDescription: true,
         },
       ],
     },
@@ -423,28 +456,63 @@ export function Projects() {
       name: 'FantaSanremo 2026',
       icon: Megaphone,
       color: 'from-coral-400 to-yellow-400',
-      description: 'Campagna virale "Lo Sapevi Che...?" su valori Caritas durante Sanremo',
+      description: 'Progetto per la promozione di Young Caritas Pisa',
       projects: [
         {
           client: 'Young Caritas Pisa',
           title: 'Lo Sapevi Che... #impegno',
-          description: 'Format virale FantaSanremo per Young Caritas. Campagna social \"Lo Sapevi Che...?\" che usa il trend Sanremo per educare sui valori della Caritas: l\'impegno verso gli ultimi.',
           image: sanremo1,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Young Caritas Pisa',
           title: 'Lo Sapevi Che... #accoglienza',
-          description: 'Secondo episodio della serie FantaSanremo. Format ironico e accattivante che parla di accoglienza unendo il linguaggio pop del Festival alla missione sociale.',
           image: sanremo2,
           stats: {},
+          hideDescription: true,
         },
         {
           client: 'Young Caritas Pisa',
           title: 'Lo Sapevi Che... #dirittidelledonne',
-          description: 'Terzo episodio dedicato ai diritti delle donne. Campagna che intercetta il buzz di Sanremo per veicolare messaggi di giustizia sociale con tone divertente.',
           image: sanremo3,
           stats: {},
+          hideDescription: true,
+        },
+        {
+          client: 'Young Caritas Pisa',
+          title: 'Non "sono solo" canzonette',
+          image: sanremoCanzonette,
+          stats: {},
+          hideDescription: true,
+        },
+        {
+          client: 'Young Caritas Pisa',
+          title: 'Giochi di intrattenimento',
+          image: giochi1,
+          stats: {},
+          hideDescription: true,
+        },
+        {
+          client: 'Young Caritas Pisa',
+          title: 'Giochi di intrattenimento',
+          image: giochi2,
+          stats: {},
+          hideDescription: true,
+        },
+        {
+          client: 'Young Caritas Pisa',
+          title: 'Giochi di intrattenimento',
+          image: giochi3,
+          stats: {},
+          hideDescription: true,
+        },
+        {
+          client: 'Young Caritas Pisa',
+          title: 'Giochi di intrattenimento',
+          image: giochi4,
+          stats: {},
+          hideDescription: true,
         },
       ],
     },
@@ -481,7 +549,7 @@ export function Projects() {
             className="text-xl text-gray-600"
             style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
-            Alcuni dei lavori di cui vado più fiera · Clicca per esplorare
+            Clicca per esplorare
           </p>
         </motion.div>
 
